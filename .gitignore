@@ -1,0 +1,13 @@
+# macOS
+.DS_Store
+
+# Conversion output and temporary files
+*.docx
+.pages2docx.*.docx
+converted/
+
+# Local test fixtures and output
+pages-test/
+pages-test-output/
+test1.pages
+test2.pages
