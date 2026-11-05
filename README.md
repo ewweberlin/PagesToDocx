@@ -139,6 +139,31 @@ documents.
 
 ## Troubleshooting
 
+**`zsh: permission denied: ./pages2docx.sh`**
+
+The executable bit is missing. This usually happens when the script was
+downloaded as a single file instead of cloned. Fix it with:
+
+```bash
+chmod +x pages2docx.sh
+./pages2docx.sh .
+```
+
+You can also run the script through `bash` explicitly:
+
+```bash
+bash pages2docx.sh .
+```
+
+If the error persists, check the file's permissions and extended attributes:
+
+```bash
+ls -l@ pages2docx.sh
+```
+
+A folder on an external or network volume mounted with the `noexec` option can
+also cause this. Copy the script into your home folder and try again.
+
 **"Operation not permitted" or a modal dialog appears in Pages**
 
 Dismiss any Pages dialogs before running the script, and quit Pages if it is in
